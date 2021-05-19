@@ -20,16 +20,16 @@
                 {{ form.hidden_tag() }}
                 <fieldset class="form-group">
                     <div class="form-group">
-                        {{ form.username.label(class="form-control-label text-white-primary") }}
-                        {% if form.username.errors%}
-                            {{ form.username(class="form-control form-control-lg is-invalid") }}
+                        {{ form.email.label(class="form-control-label text-white-primary") }}
+                        {% if form.email.errors%}
+                            {{ form.email(class="form-control form-control-lg is-invalid") }}
                             <div class="invalid-feedback">
-                                {% for error in form.username.errors %}
+                                {% for error in form.email.errors %}
                                     <small>{{ error }}</small>
                                 {% endfor %}
                             </div>
                         {% else %}
-                            {{ form.username(class="form-control form-control-lg") }}
+                            {{ form.email(class="form-control form-control-lg") }}
                         {% endif %}
                     </div>
                     <div class="form-group">
@@ -45,12 +45,6 @@
                             {{ form.password(class="form-control form-control-lg") }}
                         {% endif %}
                     </div>
-                    <div class="form-group form-check">
-                        <div class="white-checkbox">
-                            {{ form.remember_me(class="form-check-input") }}
-                        </div>
-                        {{ form.remember_me.label(class="form-check-label text-white-primary") }}
-                    </div>
                 </fieldset>
                 <div class="form-group">
                     {{ form.submit(class="btn")}}
@@ -58,12 +52,12 @@
             </form>
             <div class="border-top pt-3">
                 <small class="text-muted">
-                    Dont have an account? <a href="{{ url_for('register') }}">Register</a>
+                    Dont have an account? <a href="{{ url_for('login') }}">Register</a>
                 </small>
             </div>
             <div>
                 <small class="text-muted">
-                    Forgot Password? <a href="{{ url_for('reset_password') }}">Reset Password</a>
+                    Forgot Password? <a href="{{ url_for('login') }}">Reset Password</a>
                 </small>
             </div>
         </div>

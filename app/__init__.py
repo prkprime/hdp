@@ -1,15 +1,11 @@
 import os
 
-from decouple import config
 from flask import Flask
 from flask_bcrypt import Bcrypt
 from flask_login import LoginManager
 from flask_sqlalchemy import SQLAlchemy
 
-DATABASE_NAME = config("DATABASE_NAME")
-ADMIN_EMAIL = config("ADMIN_EMAIL")
-ADMIN_PASSWD = config("ADMIN_PASSWD")
-SECRET_KEY = config("SECRET_KEY")
+from .config import ADMIN_EMAIL, ADMIN_PASSWD, DATABASE_NAME, SECRET_KEY
 
 app = Flask(__name__)
 app.config["SECRET_KEY"] = SECRET_KEY
