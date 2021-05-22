@@ -6,7 +6,7 @@ authors = ["Pratik Gorade <pratikgorade0@gmail.com>"]
 license = "MIT"
 
 [tool.poetry.dependencies]
-python = "^3.8"
+python = "3.8.5"
 Flask = "^2.0.0"
 Flask-SQLAlchemy = "^2.5.1"
 python-decouple = "^3.4"
