@@ -24,7 +24,6 @@ from app import routes
 from app.models import User
 
 if not os.path.isfile(os.path.join(os.getcwd(), "app", DATABASE_NAME + ".db")):
-    print("ummm")
     db.create_all()
     master_user = User(
         email=ADMIN_EMAIL,
