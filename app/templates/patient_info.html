@@ -193,19 +193,6 @@
                                     {{ form.ca(class="form-control form-control-lg") }}
                                 {% endif %}
                             </div>
-                            <div class="form-group">
-                                {{ form.searchby.label(class="form-control-label text-white-primary") }}
-                                {% if form.searchby.errors%}
-                                    {{ form.searchby(class="form-control form-control-lg is-invalid") }}
-                                    <div class="invalid-feedback">
-                                        {% for error in form.searchby.errors %}
-                                            <small>{{ error }}</small>
-                                        {% endfor %}
-                                    </div>
-                                {% else %}
-                                    {{ form.searchby(class="form-control form-control-lg") }}
-                                {% endif %}
-                            </div>
                         </fieldset>
                     </div>
                 </div>

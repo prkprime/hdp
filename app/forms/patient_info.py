@@ -1,18 +1,18 @@
 from flask_wtf import FlaskForm
 from wtforms import FloatField, IntegerField, SelectField, SubmitField
-from wtforms.validators import DataRequired
+from wtforms.validators import InputRequired
 
 
 class PatientInfo(FlaskForm):
-    age = IntegerField(label="Age", validators=[DataRequired()])
+    age = IntegerField(label="Age", validators=[InputRequired()])
     gender = SelectField(
         label="Gender",
-        validators=[DataRequired()],
+        validators=[InputRequired()],
         choices=[(0, "Female"), (1, "Male")],
     )
     chest_pain = SelectField(
         label="Cheast Pain",
-        validators=[DataRequired()],
+        validators=[InputRequired()],
         choices=[
             (1, "Typical Angina"),
             (2, "Atypical Angina"),
@@ -20,13 +20,13 @@ class PatientInfo(FlaskForm):
             (4, "Asymptotic"),
         ],
     )
-    resting_bp = IntegerField(label="Resting BP (mmHg)", validators=[DataRequired()])
+    resting_bp = IntegerField(label="Resting BP (mmHg)", validators=[InputRequired()])
     sereum_cholestoral = IntegerField(
-        label="Sereum Cholestoral (mg/dl)", validators=[DataRequired()]
+        label="Sereum Cholestoral (mg/dl)", validators=[InputRequired()]
     )
     fasting_blood_sugar = SelectField(
         label="Fasting Blood Sugur",
-        validators=[DataRequired()],
+        validators=[InputRequired()],
         choices=[
             (0, "Less than or Equal to 120mg/dl"),
             (1, "More than 120mg/dl"),
@@ -34,7 +34,7 @@ class PatientInfo(FlaskForm):
     )
     resting_ecg = SelectField(
         label="Resting ECG",
-        validators=[DataRequired()],
+        validators=[InputRequired()],
         choices=[
             (0, "Normal"),
             (1, "ST-T Wave Abnormality"),
@@ -42,32 +42,23 @@ class PatientInfo(FlaskForm):
         ],
     )
     max_heart_rate = IntegerField(
-        label="Maximum Heart Rate", validators=[DataRequired()]
+        label="Maximum Heart Rate", validators=[InputRequired()]
     )
     exercise_induced_angina = SelectField(
         label="Exercise Induced Angina",
-        validators=[DataRequired()],
+        validators=[InputRequired()],
         choices=[
             (0, "Yes"),
             (1, "No"),
         ],
     )
-    oldpeak = FloatField(label="Oldpeak", validators=[DataRequired()])
+    oldpeak = FloatField(label="Oldpeak", validators=[InputRequired()])
     slope = SelectField(
         label="Slope",
-        validators=[DataRequired()],
+        validators=[InputRequired()],
         choices=[(1, "Upsloping"), (2, "Flat"), (3, "Downsloping")],
     )
-    ca = FloatField(label="CA", validators=[DataRequired()])
-    thal = IntegerField(label="Thal", validators=[DataRequired()])
+    ca = FloatField(label="CA", validators=[InputRequired()])
+    thal = IntegerField(label="Thal", validators=[InputRequired()])
 
-    searchby = SelectField(
-        label="Search By",
-        validators=[DataRequired()],
-        choices=[
-            ("naive_bayes", "Naive Bayes"),
-            ("decision_tree", "Decision Tree"),
-            ("knn", "KNN"),
-        ],
-    )
     check = SubmitField(label="Check")
