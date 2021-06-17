@@ -1,6 +1,7 @@
 body {
     font-family: 'Open Sans', sans-serif;
-    background-color: #FFFFFF;
+    background-image: url("https://partheniumprojects.com/wp-content/uploads/2018/12/Heart-Disease-Prediction-1.png");
+    background-size: 100vmax;
 }
 .navbar {
     background-color: #03DAC4;
@@ -41,4 +42,8 @@ body {
 
 .form-control{
     border-color: black;
+}
+
+.form-bg-custom {
+    background: rgba(255,255,255,0.7);
 }
