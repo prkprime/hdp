@@ -1,11 +1,10 @@
 import pickle
 
-from flask import flash
-from flask import render_template
-from flask import request
+from flask import flash, render_template, request
 from flask_login.utils import login_required
 from sklearn.ensemble import RandomForestClassifier, VotingClassifier
 from sklearn.linear_model import LogisticRegression
+ 
 
 from app import app
 from app.forms import PatientInfo
@@ -35,9 +34,13 @@ def patient_info():
                 form.thal.data,
             ]
         ]
-        result = ensemble.predict(data)
-        if result[0] == 0:
-            flash("The patient doesn't have Heart Disease", "info")
-        else:
-            flash("The patient has Heart Disease", "info")
+        try:
+            result = ensemble.predict(data)
+            if result[0] == 0:
+                flash("The patient doesn't have Heart Disease", "info")
+            else:
+                flash("The patient has Heart Disease", "info")
+        except Exception as e:
+            print(e)
+            flash("Something went wrong", "danger")
     return render_template("patient_info.html", title="Patient Info - HDP", form=form)

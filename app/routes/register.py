@@ -17,6 +17,7 @@ def register():
                 email=form.email.data.lower(),
                 u_type=form.u_type.data.lower(),
                 password=hashed_passwd,
+                approved=1,
             )
             db.session.add(user)
             db.session.commit()

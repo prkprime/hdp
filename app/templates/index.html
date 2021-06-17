@@ -6,19 +6,8 @@
 
 {% block content %}    
     <div class="row mt-4">
-        <div class="col-md-4 offset-md-4">
-            {% with messages = get_flashed_messages(with_categories=true) %}
-            {% if messages %}
-                {% for category, message in messages %}
-                    <div class="alert alert-{{ category }}">
-                        {{ message }}
-                    </div>
-                {% endfor %}
-            {% endif%}
-            {% endwith %}
-            <div>
-                Index Page
-            </div>
+        <div>
+            <img src="{{ url_for(endpoint='static', filename='images/0001.jpg') }}" style="width: 100%;" alt="group info">
         </div>
     </div>
 {% endblock content%}
